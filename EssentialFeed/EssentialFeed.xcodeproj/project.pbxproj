@@ -78,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				D0528796277214B2009FCB2F /* Feed Feature */,
+				D0547CE7277332080052AF12 /* Feed API */,
 			);
 			path = EssentialFeed;
 			sourceTree = "<group>";
@@ -93,7 +94,6 @@
 		D0528796277214B2009FCB2F /* Feed Feature */ = {
 			isa = PBXGroup;
 			children = (
-				D0547CE7277332080052AF12 /* Feed API */,
 				D05287922772135E009FCB2F /* FeedItem.swift */,
 				D0528794277213E3009FCB2F /* FeedLoader.swift */,
 			);
