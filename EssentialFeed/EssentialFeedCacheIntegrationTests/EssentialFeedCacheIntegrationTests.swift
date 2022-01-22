@@ -31,7 +31,7 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
         let feed = uniqueImageFeed().models
         
         save(feed, with: sutToPerformSave)
-        
+
         expect(sutToPerformLoad, toLoad: feed)
     }
     
@@ -49,6 +49,7 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
     }
 
     // MARK: Helpers
+    
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> LocalFeedLoader {
         let storeBundle = Bundle(for: CoreDataFeedStore.self)
         let storeURL = testSpecificStoreURL()
