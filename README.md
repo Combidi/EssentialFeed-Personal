@@ -1,6 +1,7 @@
 # Essential Feed App – Image Feed Feature
 
-[![CI](https://github.com/Combidi/EssentialFeed-Personal/actions/workflows/CI.yml/badge.svg)](https://github.com/Combidi/EssentialFeed-Personal/actions/workflows/CI.yml)
+![CI](https://github.com/Combidi/EssentialFeed-Personal/actions/workflows/CI_iOS.yml/badge.svg)<br>
+![CI](https://github.com/Combidi/EssentialFeed-Personal/actions/workflows/CI_macOS.yml/badge.svg)
 
 ## BDD Specs
 
