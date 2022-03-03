@@ -133,9 +133,20 @@ Location</string>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="pHT-9h-zBj">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh" destination="TOW-cn-lxc" eventType="valueChanged" id="50A-AQ-lf6"/>
+                        </connections>
                     </refreshControl>
+                    <connections>
+                        <outlet property="refreshController" destination="TOW-cn-lxc" id="ZGd-70-PCs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yz0-Ny-0DE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="TOW-cn-lxc" customClass="FeedRefreshViewController" customModule="EssentialFeediOS" customModuleProvider="target">
+                    <connections>
+                        <outlet property="view" destination="pHT-9h-zBj" id="RQ0-m7-o9Z"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="698.55072463768124" y="50.892857142857139"/>
         </scene>
