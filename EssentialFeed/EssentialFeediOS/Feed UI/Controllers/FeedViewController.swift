@@ -12,7 +12,15 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
     var delegate: FeedViewControllerDelegate?
     
     var tableModel = [FeedImageCellController]() {
-        didSet { tableView.reloadData() }
+        didSet {
+            if Thread.isMainThread {
+                tableView.reloadData()
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.tableView.reloadData()
+                }
+            }
+        }
     }
 
     public override func viewDidLoad() {
@@ -29,7 +37,13 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
         if viewModel.isLoading {
             refreshControl?.beginRefreshing()
         } else {
-            refreshControl?.endRefreshing()
+            if Thread.isMainThread {
+                refreshControl?.endRefreshing()
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.refreshControl?.endRefreshing()
+                }
+            }
         }
     }
     
