@@ -15,6 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="ioN-Wh-IBa" customClass="ErrorView" customModule="EssentialFeediOS" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -158,12 +159,14 @@ Location</string>
                             <outlet property="dataSource" destination="OmZ-kY-RgU" id="Uqb-Cd-Q4d"/>
                             <outlet property="delegate" destination="OmZ-kY-RgU" id="KgJ-dL-ihE"/>
                             <outlet property="prefetchDataSource" destination="OmZ-kY-RgU" id="iDp-Nd-OEV"/>
+                            <outletCollection property="gestureRecognizers" destination="GHZ-F0-Uel" appends="YES" id="YST-2x-ExJ"/>
                         </connections>
                     </tableView>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="pHT-9h-zBj">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
+                            <action selector="hideMessageAnimated" destination="ioN-Wh-IBa" eventType="valueChanged" id="vyU-3G-0Px"/>
                             <action selector="refresh" destination="OmZ-kY-RgU" eventType="valueChanged" id="Ha6-E4-9Q1"/>
                         </connections>
                     </refreshControl>
@@ -172,6 +175,7 @@ Location</string>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yz0-Ny-0DE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="GHZ-F0-Uel"/>
             </objects>
             <point key="canvasLocation" x="698.55072463768124" y="50.892857142857139"/>
         </scene>
