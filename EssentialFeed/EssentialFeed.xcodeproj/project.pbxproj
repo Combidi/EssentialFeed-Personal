@@ -34,6 +34,8 @@
 		D046680A27D1614C001AF8B5 /* UITableView+Dequeueing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D046680927D1614C001AF8B5 /* UITableView+Dequeueing.swift */; };
 		D046680C27D1F8DF001AF8B5 /* UIImageView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D046680B27D1F8DF001AF8B5 /* UIImageView+Animations.swift */; };
 		D046C26D27E6758D002F5619 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D046C26C27E6758D002F5619 /* ErrorView.swift */; };
+		D046C27027E67B0C002F5619 /* FeedErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D046C26F27E67B0C002F5619 /* FeedErrorViewModel.swift */; };
+		D046C27227E67B5B002F5619 /* UIRefreshControl+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D046C27127E67B5B002F5619 /* UIRefreshControl+Helpers.swift */; };
 		D04D17D42793684500E0BD77 /* CodableFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04D17D32793684500E0BD77 /* CodableFeedStore.swift */; };
 		D04DC31327C56E1B0007865B /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04DC31227C56E1B0007865B /* FeedImageDataLoader.swift */; };
 		D04DC31A27C5754B0007865B /* FeedImageCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04DC31927C5754B0007865B /* FeedImageCellController.swift */; };
@@ -164,6 +166,8 @@
 		D046680927D1614C001AF8B5 /* UITableView+Dequeueing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeueing.swift"; sourceTree = "<group>"; };
 		D046680B27D1F8DF001AF8B5 /* UIImageView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Animations.swift"; sourceTree = "<group>"; };
 		D046C26C27E6758D002F5619 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		D046C26F27E67B0C002F5619 /* FeedErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorViewModel.swift; sourceTree = "<group>"; };
+		D046C27127E67B5B002F5619 /* UIRefreshControl+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Helpers.swift"; sourceTree = "<group>"; };
 		D04D17D32793684500E0BD77 /* CodableFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStore.swift; sourceTree = "<group>"; };
 		D04DC31227C56E1B0007865B /* FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoader.swift; sourceTree = "<group>"; };
 		D04DC31927C5754B0007865B /* FeedImageCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCellController.swift; sourceTree = "<group>"; };
@@ -306,6 +310,7 @@
 				D006E2AE27B6F108001281D7 /* UIView+Shimmering.swift */,
 				D046680927D1614C001AF8B5 /* UITableView+Dequeueing.swift */,
 				D046680B27D1F8DF001AF8B5 /* UIImageView+Animations.swift */,
+				D046C27127E67B5B002F5619 /* UIRefreshControl+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -552,6 +557,7 @@
 				D0464EE527CEB2FF003B70DF /* FeedViewModel.swift */,
 				D0464EE727CEB322003B70DF /* FeedLoadingViewModel.swift */,
 				D01B5D6C27DFCC6F00AA972D /* Feed.strings */,
+				D046C26F27E67B0C002F5619 /* FeedErrorViewModel.swift */,
 			);
 			path = "Feed Presentation";
 			sourceTree = "<group>";
@@ -865,6 +871,7 @@
 				D04DC31327C56E1B0007865B /* FeedImageDataLoader.swift in Sources */,
 				D006E2AF27B6F108001281D7 /* UIView+Shimmering.swift in Sources */,
 				D046680A27D1614C001AF8B5 /* UITableView+Dequeueing.swift in Sources */,
+				D046C27227E67B5B002F5619 /* UIRefreshControl+Helpers.swift in Sources */,
 				D0464EE227CEAC23003B70DF /* FeedImagePresenter.swift in Sources */,
 				D0464EE627CEB2FF003B70DF /* FeedViewModel.swift in Sources */,
 				D06AA53F27AF244300078E45 /* FeedViewController.swift in Sources */,
@@ -874,6 +881,7 @@
 				D046C26D27E6758D002F5619 /* ErrorView.swift in Sources */,
 				D037352F27B59F1F00830663 /* FeedImageCell.swift in Sources */,
 				D0F9340C27CC136D002B9ABC /* FeedImageViewModel.swift in Sources */,
+				D046C27027E67B0C002F5619 /* FeedErrorViewModel.swift in Sources */,
 				D04DC31A27C5754B0007865B /* FeedImageCellController.swift in Sources */,
 				D04DC31D27C579010007865B /* FeedUIComposer.swift in Sources */,
 			);
