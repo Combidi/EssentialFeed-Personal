@@ -24,7 +24,14 @@ class CacheFeedImageDataUseCaseTests: XCTestCase {
             let insertionError = anyNSError()
             store.completeInsertion(with: insertionError)
         })
+    }
+    
+    func test_saveImageDataFromURL_succeedsOnSuccessfulStoreInsertion() {
+        let (sut, store) = makeSUT()
         
+        expect(sut, toCompleteWith: .success(()), when: {
+            store.completeInsertionSuccessfully()
+        })
     }
 
     // MARK: - Helpers
