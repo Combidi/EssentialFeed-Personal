@@ -7,9 +7,11 @@ import EssentialFeed
 
 final class FeedImageDataLoaderWithFallBackComposite: FeedImageDataLoader {
     private let primary: FeedImageDataLoader
+    private let fallback: FeedImageDataLoader
     
     init(primary: FeedImageDataLoader, fallback: FeedImageDataLoader) {
         self.primary = primary
+        self.fallback = fallback
     }
     
     private struct Task: FeedImageDataLoaderTask {
@@ -17,7 +19,9 @@ final class FeedImageDataLoaderWithFallBackComposite: FeedImageDataLoader {
     }
     
     func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
-        primary.loadImageData(from: url) { _ in }
+        primary.loadImageData(from: url) { [weak self] _ in
+            _ = self?.fallback.loadImageData(from: url) { _ in }
+        }
     }
 }
 
@@ -40,6 +44,18 @@ class FeedImageDataLoaderWithFallBackCompositeTests: XCTestCase {
         XCTAssertTrue(fallbackLoader.loaderURLs.isEmpty, "Expected no loaded URLs in the fallbackLoader loader")
     }
     
+    func test_loadImageData_loadsFromFallbackOnPrimaryLoaderFailure() {
+        let url = anyURL()
+        let (sut, primaryLoader, fallbackLoader) = makeSUT()
+
+        _ = sut.loadImageData(from: url) { _ in }
+
+        primaryLoader.complete(with: anyNSError())
+        
+        XCTAssertEqual(primaryLoader.loaderURLs, [url], "Expected to load URL from primary loader")
+        XCTAssertEqual(fallbackLoader.loaderURLs, [url], "Expected to load URL from fallbackLoader loader")
+    }
+    
     // MARK: - Helpers
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: FeedImageDataLoader, primaryLoader: LoaderSpy, fallbackLoader: LoaderSpy) {
         let primaryLoader = LoaderSpy()
@@ -55,6 +71,10 @@ class FeedImageDataLoaderWithFallBackCompositeTests: XCTestCase {
         return URL(string: "http://any-url.com")!
     }
     
+    private func anyNSError() -> Error {
+        return NSError(domain: "any error", code: 0)
+    }
+    
     private func trackForMemoryLeaks(_ instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
         addTeardownBlock { [weak instance] in
             XCTAssertNil(instance, "Instance should have been delocated. Potential memory leak", file: file, line: line)
@@ -63,14 +83,22 @@ class FeedImageDataLoaderWithFallBackCompositeTests: XCTestCase {
 }
 
 private class LoaderSpy: FeedImageDataLoader {
-    private(set) var loaderURLs = [URL]()
+    private var messages = [(url: URL, completion: (FeedImageDataLoader.Result) -> Void)]()
+    
+    var loaderURLs: [URL] {
+        return messages.map(\.url)
+    }
     
     private struct Task: FeedImageDataLoaderTask {
         func cancel() {}
     }
     
     func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
-        loaderURLs.append(url)
+        messages.append((url, completion))
         return Task()
+    }
+    
+    func complete(with error: Error, at index: Int = 0) {
+        messages[index].completion(.failure(error))
     }
 }
