@@ -2,8 +2,9 @@
 //  Created by Peter Combee on 22/02/2022.
 //
 
-import EssentialFeed
 import UIKit
+import EssentialFeed
+import EssentialFeediOS
 
 public class FeedUIComposer {
     private init() {}
@@ -76,7 +77,7 @@ private final class FeedViewAdapter: FeedView {
     }
 
     func display(_ viewModel: FeedViewModel) {
-        controller?.tableModel = viewModel.feed.map { model in
+        controller?.display(viewModel.feed.map { model in
             let adapter = FeedImageDataLoaderPresentationAdapter<WeakRefVirtialProxy<FeedImageCellController>, UIImage>(
                 model: model,
                 imageLoader: imageLoader
@@ -89,7 +90,7 @@ private final class FeedViewAdapter: FeedView {
             )
             
             return view
-        }
+        })
     }
 }
 
