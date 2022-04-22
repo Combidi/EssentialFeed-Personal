@@ -42,7 +42,6 @@
 		D0BA97A82812A3E00037D5B3 /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA979B2812A3DF0037D5B3 /* UIButton+TestHelpers.swift */; };
 		D0BA97A92812A3E00037D5B3 /* FeedViewControllerTests+Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA97A02812A3E00037D5B3 /* FeedViewControllerTests+Assertions.swift */; };
 		D0BA97AB2812A4100037D5B3 /* FeedUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA97AA2812A4100037D5B3 /* FeedUIIntegrationTests.swift */; };
-		D0BA97AD2812A4370037D5B3 /* FeedUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA97AC2812A4370037D5B3 /* FeedUIIntegrationTests.swift */; };
 		D0EC7B812807667300FF71B4 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EC7B802807667300FF71B4 /* EssentialFeediOS.framework */; };
 		D0EC7B822807667300FF71B4 /* EssentialFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0EC7B802807667300FF71B4 /* EssentialFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -408,7 +407,6 @@
 				D0BA97A72812A3E00037D5B3 /* FeedViewControllerTests+LoaderSpy.swift in Sources */,
 				D0073A28280DD9F700A65771 /* XCTestCase+FeedImageDataLoader.swift in Sources */,
 				D0BA979328129FCA0037D5B3 /* SceneDelegateTests.swift in Sources */,
-				D0BA97AD2812A4370037D5B3 /* FeedUIIntegrationTests.swift in Sources */,
 				D0BA97A12812A3E00037D5B3 /* FeedUIIntegrationTests+Localization.swift in Sources */,
 				D0073A1A280CA20300A65771 /* FeedLoaderCacheDecoratorTests.swift in Sources */,
 				D0073A26280DD95E00A65771 /* FeedImageDataLoaderSpy.swift in Sources */,
