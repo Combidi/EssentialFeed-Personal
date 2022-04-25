@@ -29,6 +29,7 @@
 		D0BA97A92812A3E00037D5B3 /* FeedViewControllerTests+Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA97A02812A3E00037D5B3 /* FeedViewControllerTests+Assertions.swift */; };
 		D0BA97AF2812A6360037D5B3 /* FeedAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA97AE2812A6360037D5B3 /* FeedAcceptanceTests.swift */; };
 		D0BA97B128130F5F0037D5B3 /* FeedUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA97AC2812A4370037D5B3 /* FeedUIIntegrationTests.swift */; };
+		D0BA97C02816CF700037D5B3 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA97BF2816CF700037D5B3 /* CombineHelpers.swift */; };
 		D0EC7B812807667300FF71B4 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EC7B802807667300FF71B4 /* EssentialFeediOS.framework */; };
 		D0EC7B822807667300FF71B4 /* EssentialFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0EC7B802807667300FF71B4 /* EssentialFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		D0BA97A02812A3E00037D5B3 /* FeedViewControllerTests+Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewControllerTests+Assertions.swift"; sourceTree = "<group>"; };
 		D0BA97AC2812A4370037D5B3 /* FeedUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIIntegrationTests.swift; sourceTree = "<group>"; };
 		D0BA97AE2812A6360037D5B3 /* FeedAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAcceptanceTests.swift; sourceTree = "<group>"; };
+		D0BA97BF2816CF700037D5B3 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 		D0EC7B802807667300FF71B4 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 				D090D6A928075F35006E7345 /* LaunchScreen.storyboard */,
 				D090D6AC28075F35006E7345 /* Info.plist */,
 				D0BA97942812A3B50037D5B3 /* FeedUIComposer.swift */,
+				D0BA97BF2816CF700037D5B3 /* CombineHelpers.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				D090D6A328075F34006E7345 /* ViewController.swift in Sources */,
 				D090D69F28075F34006E7345 /* AppDelegate.swift in Sources */,
 				D090D6A128075F34006E7345 /* SceneDelegate.swift in Sources */,
+				D0BA97C02816CF700037D5B3 /* CombineHelpers.swift in Sources */,
 				D0BA97972812A3B50037D5B3 /* FeedUIComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
