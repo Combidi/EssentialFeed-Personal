@@ -1,7 +1,4 @@
 //
-//  RemoteImageCommentsLoader.swift
-//  EssentialFeed
-//
 //  Created by Peter Combee on 05/06/2022.
 //
 
