@@ -33,7 +33,7 @@ public final class RemoteLoader<Recource> {
                 completion(self.map(data, from: response))
             
             case .failure:
-                completion(.failure( Error.connectivity))
+                completion(.failure(Error.connectivity))
             }
         })
     }
