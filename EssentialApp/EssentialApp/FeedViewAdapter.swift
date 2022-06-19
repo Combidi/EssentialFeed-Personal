@@ -2,6 +2,10 @@
 //  Created by Peter Combee on 19/06/2022.
 //
 
+import UIKit
+import EssentialFeed
+import EssentialFeediOS
+
 final class FeedViewAdapter: ResourceView {
     private weak var controller: FeedViewController?
     private let imageLoader: (URL) -> FeedImageDataLoader.Publisher

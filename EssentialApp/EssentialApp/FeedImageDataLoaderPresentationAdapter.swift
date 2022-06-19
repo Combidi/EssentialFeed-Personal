@@ -2,6 +2,11 @@
 //  Created by Peter Combee on 19/06/2022.
 //
 
+import Combine
+import Foundation
+import EssentialFeed
+import EssentialFeediOS
+
 final class FeedImageDataLoaderPresentationAdapter<View: FeedImageView, Image>: FeedImageCellControllerDelegate where View.Image == Image {
     private let model: FeedImage
     private let imageLoader: (URL) -> FeedImageDataLoader.Publisher
