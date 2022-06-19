@@ -18,7 +18,7 @@ public final class FeedPresenter {
         self.loadingView = loadingView
         self.errorView = errorView
     }
-    
+        
     public static var title: String {
         return NSLocalizedString("FEED_VIEW_TITLE",
             tableName: "Feed",
@@ -40,11 +40,15 @@ public final class FeedPresenter {
     
     public func didFinishLoadingFeed(with feed: [FeedImage]) {
         loadingView.display(ResourceLoadingViewModel(isLoading: false))
-        feedView.display(FeedViewModel(feed: feed))
+        feedView.display(Self.map(feed))
     }
     
     public func didFinishLoadingFeed(with error: Error) {
         errorView.display(.error(message: feedLoadError))
         loadingView.display(ResourceLoadingViewModel(isLoading: false))
+    }
+    
+    public static func map(_ feed: [FeedImage]) -> FeedViewModel {
+        FeedViewModel(feed: feed)
     }
 }
