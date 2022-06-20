@@ -63,7 +63,7 @@
 		D09A541C2803FE1E009F0CD3 /* CoreDataFeedImageDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09A541B2803FE1E009F0CD3 /* CoreDataFeedImageDataStoreTests.swift */; };
 		D09EE0CC2860EC7B00633B7A /* ImageCommentsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09EE0CB2860EC7B00633B7A /* ImageCommentsPresenterTests.swift */; };
 		D09EE0CF2860ED4D00633B7A /* ImageCommentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09EE0CE2860ED4D00633B7A /* ImageCommentsPresenter.swift */; };
-		D09EE0D12860EDA900633B7A /* ImageComments.strings in Resources */ = {isa = PBXBuildFile; fileRef = D09EE0D02860EDA900633B7A /* ImageComments.strings */; };
+		D09EE0D22860F89200633B7A /* ImageComments.strings in Resources */ = {isa = PBXBuildFile; fileRef = D09EE0D42860F89200633B7A /* ImageComments.strings */; };
 		D0A27C02285CF25F00835225 /* SharedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A27C01285CF25F00835225 /* SharedLocalizationTests.swift */; };
 		D0A27C03285CF58B00835225 /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0A27C05285CF58B00835225 /* Shared.strings */; };
 		D0A27C09285FAF9700835225 /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A27C08285FAF9700835225 /* SharedLocalizationTestHelpers.swift */; };
@@ -209,7 +209,9 @@
 		D09A541B2803FE1E009F0CD3 /* CoreDataFeedImageDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedImageDataStoreTests.swift; sourceTree = "<group>"; };
 		D09EE0CB2860EC7B00633B7A /* ImageCommentsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenterTests.swift; sourceTree = "<group>"; };
 		D09EE0CE2860ED4D00633B7A /* ImageCommentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenter.swift; sourceTree = "<group>"; };
-		D09EE0D02860EDA900633B7A /* ImageComments.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ImageComments.strings; sourceTree = "<group>"; };
+		D09EE0D32860F89200633B7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ImageComments.strings; sourceTree = "<group>"; };
+		D09EE0D52860F89600633B7A /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/ImageComments.strings; sourceTree = "<group>"; };
+		D09EE0D62860F89700633B7A /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/ImageComments.strings"; sourceTree = "<group>"; };
 		D0A27C01285CF25F00835225 /* SharedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTests.swift; sourceTree = "<group>"; };
 		D0A27C04285CF58B00835225 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Shared.strings; sourceTree = "<group>"; };
 		D0A27C06285CF58D00835225 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
@@ -576,7 +578,7 @@
 			isa = PBXGroup;
 			children = (
 				D09EE0CE2860ED4D00633B7A /* ImageCommentsPresenter.swift */,
-				D09EE0D02860EDA900633B7A /* ImageComments.strings */,
+				D09EE0D42860F89200633B7A /* ImageComments.strings */,
 			);
 			path = "Image Comments Presentation";
 			sourceTree = "<group>";
@@ -899,7 +901,7 @@
 			files = (
 				D046C27D27E864A8002F5619 /* Feed.strings in Resources */,
 				D0A27C03285CF58B00835225 /* Shared.strings in Resources */,
-				D09EE0D12860EDA900633B7A /* ImageComments.strings in Resources */,
+				D09EE0D22860F89200633B7A /* ImageComments.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1106,6 +1108,16 @@
 				D046C27927E86028002F5619 /* pt-BR */,
 			);
 			name = Feed.strings;
+			sourceTree = "<group>";
+		};
+		D09EE0D42860F89200633B7A /* ImageComments.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D09EE0D32860F89200633B7A /* en */,
+				D09EE0D52860F89600633B7A /* el */,
+				D09EE0D62860F89700633B7A /* pt-BR */,
+			);
+			name = ImageComments.strings;
 			sourceTree = "<group>";
 		};
 		D0A27C05285CF58B00835225 /* Shared.strings */ = {
