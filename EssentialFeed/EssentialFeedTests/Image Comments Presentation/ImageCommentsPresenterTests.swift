@@ -1,28 +1,20 @@
 //
-//  Created by Peter Combee on 19/03/2022.
+//  Created by Peter Combee on 20/06/2022.
 //
 
 import XCTest
 import EssentialFeed
 
-final class FeedPresenterTests: XCTestCase {
-
-    func test_title_isLocalized() {
-        XCTAssertEqual(FeedPresenter.title, localized("FEED_VIEW_TITLE"))
-    }
-
-    func test_map_createsViewModel() {
-        let feed = uniqueImageFeed().models
-        
-        let viewModel = FeedPresenter.map(feed)
-        
-        XCTAssertEqual(viewModel.feed, feed)
-    }
+class ImageCommentsPresenterTests: XCTestCase {
     
+    func test_title_isLocalized() {
+        XCTAssertEqual(ImageCommentsPresenter.title, localized("IMAGE_COMMENTS_VIEW_TITLE"))
+    }
+
     // MARK: - Helpers
         
     private func localized(_ key: String, file: StaticString = #file, line: UInt = #line) -> String {
-        let table = "Feed"
+        let table = "ImageComments"
         let bundle = Bundle(for: FeedPresenter.self)
         let value = bundle.localizedString(forKey: key, value: nil, table: table)
         if value == key {
