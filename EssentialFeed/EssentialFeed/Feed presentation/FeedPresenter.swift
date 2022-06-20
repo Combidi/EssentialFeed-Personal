@@ -4,16 +4,12 @@
 
 import Foundation
 
-public protocol FeedView {
-    func display(_ viewModel: FeedViewModel)
-}
-
 public final class FeedPresenter {
         
     public static var title: String {
         return NSLocalizedString("FEED_VIEW_TITLE",
             tableName: "Feed",
-            bundle: Bundle(for: FeedPresenter.self),
+            bundle: Bundle(for: Self.self),
             comment: "Title for the feed view")
     }
         
