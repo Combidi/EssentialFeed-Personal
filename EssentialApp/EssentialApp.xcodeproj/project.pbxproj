@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		D004B717280C9AAA0053A063 /* XCTestCase+MomoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004B716280C9AAA0053A063 /* XCTestCase+MomoryLeakTracking.swift */; };
 		D004B719280C9B0E0053A063 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004B718280C9B0E0053A063 /* SharedTestHelpers.swift */; };
+		D02A5922285FBC1C00A7C2C2 /* LoadResourcePresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A5921285FBC1C00A7C2C2 /* LoadResourcePresentationAdapter.swift */; };
+		D02A5926285FBC7100A7C2C2 /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A5925285FBC7100A7C2C2 /* FeedViewAdapter.swift */; };
+		D02A5928285FBCE100A7C2C2 /* WeakRefVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A5927285FBCE100A7C2C2 /* WeakRefVirtualProxy.swift */; };
 		D090D69F28075F34006E7345 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D090D69E28075F34006E7345 /* AppDelegate.swift */; };
 		D090D6A128075F34006E7345 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D090D6A028075F34006E7345 /* SceneDelegate.swift */; };
 		D090D6A328075F34006E7345 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D090D6A228075F34006E7345 /* ViewController.swift */; };
@@ -59,6 +62,9 @@
 /* Begin PBXFileReference section */
 		D004B716280C9AAA0053A063 /* XCTestCase+MomoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MomoryLeakTracking.swift"; sourceTree = "<group>"; };
 		D004B718280C9B0E0053A063 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
+		D02A5921285FBC1C00A7C2C2 /* LoadResourcePresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresentationAdapter.swift; sourceTree = "<group>"; };
+		D02A5925285FBC7100A7C2C2 /* FeedViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewAdapter.swift; sourceTree = "<group>"; };
+		D02A5927285FBCE100A7C2C2 /* WeakRefVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxy.swift; sourceTree = "<group>"; };
 		D090D69B28075F34006E7345 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D090D69E28075F34006E7345 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D090D6A028075F34006E7345 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +157,9 @@
 				D090D6AC28075F35006E7345 /* Info.plist */,
 				D0BA97942812A3B50037D5B3 /* FeedUIComposer.swift */,
 				D0BA97BF2816CF700037D5B3 /* CombineHelpers.swift */,
+				D02A5921285FBC1C00A7C2C2 /* LoadResourcePresentationAdapter.swift */,
+				D02A5925285FBC7100A7C2C2 /* FeedViewAdapter.swift */,
+				D02A5927285FBCE100A7C2C2 /* WeakRefVirtualProxy.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -275,10 +284,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D02A5926285FBC7100A7C2C2 /* FeedViewAdapter.swift in Sources */,
+				D02A5922285FBC1C00A7C2C2 /* LoadResourcePresentationAdapter.swift in Sources */,
 				D090D6A328075F34006E7345 /* ViewController.swift in Sources */,
 				D090D69F28075F34006E7345 /* AppDelegate.swift in Sources */,
 				D090D6A128075F34006E7345 /* SceneDelegate.swift in Sources */,
 				D0BA97C02816CF700037D5B3 /* CombineHelpers.swift in Sources */,
+				D02A5928285FBCE100A7C2C2 /* WeakRefVirtualProxy.swift in Sources */,
 				D0BA97972812A3B50037D5B3 /* FeedUIComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,7 +389,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -432,7 +443,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
