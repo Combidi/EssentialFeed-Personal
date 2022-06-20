@@ -11,6 +11,7 @@ public final class FeedUIComposer {
     private init() {}
     
     public static func feedComposedWith(feedLoader: @escaping () -> AnyPublisher<[FeedImage], Error>, imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher) -> FeedViewController {
+
         let presentationAdapter = LoadResourcePresentationAdapter<[FeedImage], FeedViewAdapter>(
             loader: { feedLoader().dispatchOnMainQueue() })
         
@@ -51,8 +52,8 @@ private extension FeedViewController {
     }
 }
 
-extension WeakRefVirtualProxy: FeedImageView where T: FeedImageView, T.Image == UIImage {
-    func display(_ model: FeedImageViewModel<UIImage>) {
+extension WeakRefVirtualProxy: ResourceView where T: ResourceView, T.ResourceViewModel == UIImage {
+    func display(_ model: UIImage) {
         object?.display(model)
     }
 }
