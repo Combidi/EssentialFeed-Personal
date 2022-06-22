@@ -41,16 +41,6 @@ public final class FeedUIComposer {
     }
 }
 
-private extension ListViewController {
-    static func makeWith(title: String) -> ListViewController {
-        let bundle = Bundle(for: ListViewController.self)
-        let storyboard = UIStoryboard(name: "Feed", bundle: bundle)
-        let feedController = storyboard.instantiateInitialViewController() as! ListViewController
-        feedController.title = FeedPresenter.title
-        return feedController
-    }
-}
-
 extension WeakRefVirtualProxy: ResourceView where T: ResourceView, T.ResourceViewModel == UIImage {
     func display(_ model: UIImage) {
         object?.display(model)
