@@ -12,9 +12,53 @@ extension ListViewController {
         tableView.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
     }
     
-    func simulateUserInitiatedFeedReload() {
+    func simulateUserInitiatedReload() {
         refreshControl?.simulatePullToRefresh()
     }
+    
+    func simulateErrorViewTap() {
+        errorView.simulateTap()
+    }
+        
+    var errorMessage: String? {
+        return errorView.message
+    }
+
+    var isShowingLoadingIndicator: Bool {
+        return refreshControl?.isRefreshing == true
+    }
+}
+
+extension ListViewController {
+    func numberOfRenderedComments() -> Int {
+        tableView.numberOfSections == 0 ? 0 : tableView.numberOfRows(inSection: commentsSection)
+    }
+    
+    private var commentsSection: Int {
+        return 0
+    }
+    
+    func commentMessage(at row: Int) -> String? {
+        commentView(at: row)?.messageLabel.text
+    }
+
+    func commentDate(at row: Int) -> String? {
+        commentView(at: row)?.dateLabel.text
+    }
+
+    func commentUsername(at row: Int) -> String? {
+        commentView(at: row)?.usernameLabel.text
+    }
+    
+    private func commentView(at row: Int) -> ImageCommentCell? {
+        guard numberOfRenderedComments() > row else { return nil }
+        let ds = tableView.dataSource
+        let index = IndexPath(row: row, section: commentsSection)
+        return ds?.tableView(tableView, cellForRowAt: index) as? ImageCommentCell
+    }
+}
+
+extension ListViewController {
     
     @discardableResult
     func simulateFeedImageViewVisible(at index: Int) -> FeedImageCell? {
@@ -30,6 +74,12 @@ extension ListViewController {
         delegate?.tableView?(tableView, didEndDisplaying: view!, forRowAt: index)
         
         return view
+    }
+    
+    func simulateTapOnFeedImage(at index: Int = 0) {
+        let delegate = tableView.delegate
+        let index = IndexPath(row: index, section: feedImagesSection)
+        delegate?.tableView?(tableView, didSelectRowAt: index)
     }
     
     func simulateFeedImageNearVisable(at row: Int) {
@@ -50,18 +100,6 @@ extension ListViewController {
         return simulateFeedImageViewVisible(at: 0)?.renderedImage
     }
     
-    func simulateErrorViewTap() {
-        errorView.simulateTap()
-    }
-    
-    var errorMessage: String? {
-        return errorView.message
-    }
-
-    var isShowingLoadingIndicator: Bool {
-        return refreshControl?.isRefreshing == true
-    }
-
     func numberOfRenderedFeedImageViews() -> Int {
         tableView.numberOfSections == 0 ? 0 : tableView.numberOfRows(inSection: feedImagesSection)
     }
