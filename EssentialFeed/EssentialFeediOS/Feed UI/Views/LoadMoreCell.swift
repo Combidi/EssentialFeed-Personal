@@ -1,5 +1,5 @@
 //
-//  Created by Peter Combee on 03/08/2022.
+// Copyright © Essential Developer. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,6 @@ public class LoadMoreCell: UITableViewCell {
         contentView.addSubview(spinner)
         
         spinner.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             spinner.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             spinner.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
@@ -20,7 +19,7 @@ public class LoadMoreCell: UITableViewCell {
         
         return spinner
     }()
-
+    
     private lazy var messageLabel: UILabel = {
         let label = UILabel()
         label.textColor = .tertiaryLabel
@@ -28,17 +27,14 @@ public class LoadMoreCell: UITableViewCell {
         label.numberOfLines = 0
         label.textAlignment = .center
         label.adjustsFontForContentSizeCategory = true
-        
         contentView.addSubview(label)
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8 ),
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             contentView.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8),
             label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             contentView.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 8),
-            
         ])
         
         return label
@@ -46,7 +42,13 @@ public class LoadMoreCell: UITableViewCell {
     
     public var isLoading: Bool {
         get { spinner.isAnimating }
-        set { newValue ? spinner.startAnimating() : spinner.stopAnimating() }
+        set {
+            if newValue {
+                spinner.startAnimating()
+            } else {
+                spinner.stopAnimating()
+            }
+        }
     }
     
     public var message: String? {
