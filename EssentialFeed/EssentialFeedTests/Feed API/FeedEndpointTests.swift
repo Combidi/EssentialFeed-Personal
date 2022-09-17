@@ -7,7 +7,7 @@ import EssentialFeed
 
 class FeedEndpointTests: XCTestCase {
     
-    func test() {
+    func test_feed_endpointURL() {
         let baseURL = URL(string: "http://base-url.com")!
         
         let received = FeedEndpoint.get.url(baseURL: baseURL)
