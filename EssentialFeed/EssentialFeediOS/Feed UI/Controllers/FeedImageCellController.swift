@@ -43,7 +43,6 @@ extension FeedImageCellController: UITableViewDataSource, UITableViewDelegate, U
         cell?.onRetry = { [weak self] in
             self?.delegate.didRequestImage()
         }
-
         delegate.didRequestImage()
         return cell!
     }
