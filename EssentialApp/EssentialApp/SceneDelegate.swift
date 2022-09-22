@@ -2,6 +2,7 @@
 //  Created by Peter Combee on 13/04/2022.
 //
 
+import os
 import UIKit
 import CoreData
 import Combine
@@ -15,11 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
     }()
     
+    private lazy var logger = Logger(subsystem: "com.essentialdeveloper.EssentialAppCaseStudy", category: "main")
+        
     private lazy var store: FeedStore & FeedImageDataStore = {
-        try! CoreDataFeedStore(
-            storeURL: NSPersistentContainer
-                .defaultDirectoryURL()
-                .appendingPathComponent("feed-store.sqlite"))
+        do {
+            return try CoreDataFeedStore(storeURL: NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("feed-store.sqlite"))
+        } catch {
+            assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            logger.fault("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            return NullStore()
+        }
     }()
 
     private lazy var localFeedLoader: LocalFeedLoader = {
@@ -113,15 +119,41 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func makeLocalImageLoaderWithRemoteFallback(url: URL) -> FeedImageDataLoader.Publisher {
-        let remoteImageLoader = RemoteFeedImageDataLoader(client: httpClient)
         let localImageLoader = LocalFeedImageDataLoader(store: store)
 
         return localImageLoader
             .loadImageDataPublisher(from: url)
-            .fallback(to: {
-                remoteImageLoader
-                    .loadImageDataPublisher(from: url)
+            .fallback(to: { [httpClient] in
+                httpClient
+                    .getPublisher(from: url)
+                    .tryMap(FeedImageDataMapper.map)
                     .caching(to: localImageLoader, using: url)
             })
+    }
+}
+
+final private class HTTPClientProfilingDecorator: HTTPClient {
+    private let decoratee: HTTPClient
+    private let logger: Logger
+    
+    init(decoratee: HTTPClient, logger: Logger) {
+        self.decoratee = decoratee
+        self.logger = logger
+    }
+    
+    func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+        logger.trace("Started loading url: \(url)")
+        
+        let startTime = CACurrentMediaTime()
+        return decoratee.get(from: url) { [logger] result in
+            if case let .failure(error) = result {
+                logger.trace("Failed to load url: \(url) with error: \(error.localizedDescription)")
+            }
+        
+            let elapsed = CACurrentMediaTime() - startTime
+            logger.trace("Finished loading url: \(url) in \(elapsed) seconds")
+            
+            completion(result)
+        }
     }
 }

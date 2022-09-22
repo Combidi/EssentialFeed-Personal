@@ -19,6 +19,7 @@
 		D090D6A328075F34006E7345 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D090D6A228075F34006E7345 /* ViewController.swift */; };
 		D090D6A828075F35006E7345 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D090D6A728075F35006E7345 /* Assets.xcassets */; };
 		D090D6AB28075F35006E7345 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D090D6A928075F35006E7345 /* LaunchScreen.storyboard */; };
+		D0B8792028D711FA0079688D /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B8791F28D711FA0079688D /* NullStore.swift */; };
 		D0BA979328129FCA0037D5B3 /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA979228129FCA0037D5B3 /* SceneDelegateTests.swift */; };
 		D0BA97972812A3B50037D5B3 /* FeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA97942812A3B50037D5B3 /* FeedUIComposer.swift */; };
 		D0BA97A22812A3E00037D5B3 /* UIControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA979D2812A3E00037D5B3 /* UIControl+TestHelpers.swift */; };
@@ -76,6 +77,7 @@
 		D090D6AA28075F35006E7345 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D090D6AC28075F35006E7345 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D090D6B128075F35006E7345 /* EssentialAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B8791F28D711FA0079688D /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 		D0BA979228129FCA0037D5B3 /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
 		D0BA97942812A3B50037D5B3 /* FeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIComposer.swift; sourceTree = "<group>"; };
 		D0BA97992812A3DF0037D5B3 /* FeedViewControllerTests+LoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewControllerTests+LoaderSpy.swift"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				D02A5925285FBC7100A7C2C2 /* FeedViewAdapter.swift */,
 				D02A5927285FBCE100A7C2C2 /* WeakRefVirtualProxy.swift */,
 				D03A1E022873839600E05292 /* CommentsUIComposer.swift */,
+				D0B8791F28D711FA0079688D /* NullStore.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				D02A5926285FBC7100A7C2C2 /* FeedViewAdapter.swift in Sources */,
 				D02A5922285FBC1C00A7C2C2 /* LoadResourcePresentationAdapter.swift in Sources */,
+				D0B8792028D711FA0079688D /* NullStore.swift in Sources */,
 				D090D6A328075F34006E7345 /* ViewController.swift in Sources */,
 				D090D69F28075F34006E7345 /* AppDelegate.swift in Sources */,
 				D03A1E032873839600E05292 /* CommentsUIComposer.swift in Sources */,
